@@ -14,7 +14,7 @@ import {
   ContentTitle,
 } from './styles';
 
-export interface Coffee {
+export interface CoffeeType {
   id: string;
   imageSrc: string;
   tags: string[];
@@ -29,7 +29,7 @@ export function Home() {
     return String(Math.random() * (new Date().getTime() - 1) + 1);
   }
 
-  const coffeeList: Coffee[] = [
+  const coffeeList: CoffeeType[] = [
     {
       id: createId(),
       imageSrc: '/images/coffees/expresso.png',

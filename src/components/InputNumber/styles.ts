@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { mixins } from "../../../../styles/mixins";
+import { mixins } from "../../styles/mixins";
+import { INPUT_HEIGHT } from ".";
 
 export const Container = styled.div`
   background: ${props => props.theme['base-button']};
@@ -29,11 +30,22 @@ export const Container = styled.div`
   }
 `;
 
-export const Input = styled.input`
+const INPUT_HEIGHT_SIZE = {
+  L: '2.375rem',
+  M: '2rem',
+} as const;
+
+interface InputProps {
+  inputHeight: keyof typeof INPUT_HEIGHT;
+}
+
+export const Input = styled.input.withConfig({
+  shouldForwardProp: prop => prop !== "inputHeight",
+})<InputProps>`
   ${mixins.fonts.textM};
   /* flex: 1; */
   width: 1.5rem;
-  height: 2.375rem;
+  height: ${props => INPUT_HEIGHT_SIZE[props.inputHeight]};
   background: transparent;
   color: ${props => props.theme['base-title']};
   border: 0;

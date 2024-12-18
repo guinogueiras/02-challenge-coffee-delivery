@@ -13,7 +13,7 @@ export const HomeContainer = styled.main`
 const BaseBox = styled.div`
   max-width: 1160px;
   margin: 0 auto;
-  `;
+`;
 
 export const BannerContainer = styled.div`
   position: relative;
@@ -92,7 +92,7 @@ export const ContentContainer = styled.div`
 export const ContentBox = styled(BaseBox)`
   display: grid;
   grid-template-columns: 1fr;
-  padding: 32px 20px;
+  padding: 32px 20px 150px 20px;
   gap: 54px;
 `;
 
@@ -104,6 +104,7 @@ export const ContentTitle = styled.div`
     color: ${props => props.theme['base-subtitle']};
   }
 `;
+
 export const CoffeeBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -1,11 +1,11 @@
 import { ShoppingCart } from "@phosphor-icons/react";
-import { Coffee } from "../.."
+import { CoffeeType } from "../.."
 import { Bottom, Container, CartButton, Currency, Description, Price, Tags, Title } from "./styles";
-import { InputNumber } from "../InputNumber";
+import { InputNumber } from "../../../../components/InputNumber";
 
 interface CardProps {
   key: string,
-  coffee: Coffee
+  coffee: CoffeeType
 }
 export function Card(props: CardProps) {
   const { coffee } = props;
@@ -28,7 +28,10 @@ export function Card(props: CardProps) {
           <Currency>R$</Currency>
           <Price>{coffee.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</Price>
         </div>
-        <InputNumber />
+        <InputNumber
+          onMinusClick={() => console.log('onMinusClicked')}
+          onPlusClick={() => console.log('onPlusClicked')}
+        />
         <CartButton>
           <ShoppingCart size={22} weight="fill" />
         </CartButton>
